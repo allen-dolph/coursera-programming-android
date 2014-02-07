@@ -26,11 +26,16 @@ public class ActivityOne extends Activity {
 	// onResume(), called mCreate, etc.
 	// You will need to increment these variables' values when their
 	// corresponding lifecycle methods get called
-
+    int mCreate = 0;
+    int mStart = 0;
+    int mResume = 0;
+    int mRestart = 0;
 
 
 	// TODO: Create variables for each of the TextViews, called
-        // mTvCreate, etc. 
+        // mTvCreate, etc.
+    TextView mTvCreate, mTvStart, mTvResume, mTvRestart;
+
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -40,10 +45,10 @@ public class ActivityOne extends Activity {
 		// TODO: Assign the appropriate TextViews to the TextView variables
 		// Hint: Access the TextView by calling Activity's findViewById()
 		// textView1 = (TextView) findViewById(R.id.textView1);
-
-
-
-
+        mTvCreate = (TextView)findViewById(R.id.create);
+        mTvRestart = (TextView)findViewById(R.id.restart);
+        mTvResume = (TextView)findViewById(R.id.resume);
+        mTvStart = (TextView)findViewById(R.id.start);
 
 		Button launchActivityTwoButton = (Button) findViewById(R.id.bLaunchActivityTwo); 
 		launchActivityTwoButton.setOnClickListener(new OnClickListener() {
@@ -55,10 +60,14 @@ public class ActivityOne extends Activity {
 				// Hint: use Context's startActivity() method
 
 				// Create an intent stating which Activity you would like to start
+                try
+                {
+				    // Launch the Activity using the intent
+                    Intent intent = new Intent(ActivityOne.this, ActivityTwo.class);
+                    startActivity(intent);
+                } catch (Exception e) {
 
-				
-				// Launch the Activity using the intent
-
+                }
 			
 			}
 		});
@@ -69,18 +78,20 @@ public class ActivityOne extends Activity {
 			// TODO:
 			// Restore value of counters from saved state
 			// Only need 4 lines of code, one for every count variable
-			
-		
+            mStart = savedInstanceState.getInt("onStartCount");
+		    mRestart = savedInstanceState.getInt("onRestartCount");
+            mResume = savedInstanceState.getInt("onResumeCount");
+            mCreate = savedInstanceState.getInt("onCreateCount");
 		}
 
 		// TODO: Emit LogCat message
-
+        Log.i(TAG, "onCreate");
 
 		// TODO:
 		// Update the appropriate count variable
 		// Update the user interface via the displayCounts() method
-
-
+        mCreate++;
+        displayCounts();
 
 	}
 
@@ -91,13 +102,13 @@ public class ActivityOne extends Activity {
 		super.onStart();
 
 		// TODO: Emit LogCat message
-
+        Log.i(TAG, "onStart");
 
 		// TODO:
 		// Update the appropriate count variable
 		// Update the user interface
-
-
+        mStart++;
+        displayCounts();
 	}
 
 	@Override
@@ -105,13 +116,13 @@ public class ActivityOne extends Activity {
 		super.onResume();
 
 		// TODO: Emit LogCat message
-
+        Log.i(TAG, "onResume");
 
 		// TODO:
 		// Update the appropriate count variable
 		// Update the user interface
-
-
+        mResume++;
+        displayCounts();
 	}
 
 	@Override
@@ -119,7 +130,7 @@ public class ActivityOne extends Activity {
 		super.onPause();
 
 		// TODO: Emit LogCat message
-
+        Log.i(TAG, "onPause");
 	}
 
 	@Override
@@ -127,7 +138,7 @@ public class ActivityOne extends Activity {
 		super.onStop();
 
 		// TODO: Emit LogCat message
-
+        Log.i(TAG, "onStop");
 	}
 
 	@Override
@@ -135,13 +146,13 @@ public class ActivityOne extends Activity {
 		super.onRestart();
 
 		// TODO: Emit LogCat message
-
+        Log.i(TAG, "onRestart");
 
 		// TODO:
 		// Update the appropriate count variable
 		// Update the user interface
-
-
+        mRestart++;
+        displayCounts();
 
 	}
 
@@ -150,7 +161,7 @@ public class ActivityOne extends Activity {
 		super.onDestroy();
 
 		// TODO: Emit LogCat message
-
+        Log.i(TAG, "onDestroy");
 
 	}
 
@@ -159,21 +170,17 @@ public class ActivityOne extends Activity {
 		// TODO:
 		// Save state information with a collection of key-value pairs
 		// 4 lines of code, one for every count variable
-
-
-
-
-
-
+        savedInstanceState.putInt("onCreateCount", mCreate);
+        savedInstanceState.putInt("onResumeCount", mResume);
+        savedInstanceState.putInt("onRestartCount", mRestart);
+        savedInstanceState.putInt("onStartCount", mStart);
 	}
 	
 	// Updates the displayed counters
 	public void displayCounts() {
-
 		mTvCreate.setText("onCreate() calls: " + mCreate);
 		mTvStart.setText("onStart() calls: " + mStart);
 		mTvResume.setText("onResume() calls: " + mResume);
 		mTvRestart.setText("onRestart() calls: " + mRestart);
-	
 	}
 }
