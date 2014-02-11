@@ -5,6 +5,8 @@ buildscript {
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:0.7.+'
+        //instrumentTestCompile file('/src/instrumentTest/libs/robotium-solo-5.0.1.jar')
+        classpath 'com.jayway.android.robotium:robotium-solo:4.3'
     }
 }
 

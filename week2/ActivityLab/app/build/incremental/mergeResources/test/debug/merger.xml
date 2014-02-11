@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger>
+
+    <dataSet config="main" >
+        <source path="C:\Dev\Github\allen-dolph\coursera-programming-android\week2\ActivityLab\app\src\instrumentTest\res" />
+        <source path="C:\Dev\Github\allen-dolph\coursera-programming-android\week2\ActivityLab\app\build\res\rs\test\debug" />
+    </dataSet>
+
+</merger>

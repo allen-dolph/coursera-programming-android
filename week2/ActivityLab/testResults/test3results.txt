@@ -1,0 +1,16 @@
+02-07 18:21:57.139    1756-1756/? I/Lab-ActivityOne﹕ onPause
+02-07 18:21:57.139    1756-1756/? I/Lab-ActivityOne﹕ onStop
+02-07 18:21:57.139    1756-1756/? I/Lab-ActivityOne﹕ onDestroy
+02-07 18:21:57.323    1756-1756/? I/Lab-ActivityOne﹕ onCreate
+02-07 18:21:57.323    1756-1756/? I/Lab-ActivityOne﹕ onStart
+02-07 18:21:57.327    1756-1756/? I/Lab-ActivityOne﹕ onResume
+02-07 18:22:01.723    1756-1756/? I/Lab-ActivityOne﹕ onPause
+02-07 18:22:02.387    1756-1756/? I/Lab-ActivityOne﹕ onStop
+02-07 18:22:02.387    1756-1756/? I/Lab-ActivityOne﹕ onDestroy
+02-07 18:23:24.431    1835-1835/course.labs.activitylab I/Lab-ActivityOne﹕ onCreate
+02-07 18:23:24.435    1835-1835/course.labs.activitylab I/Lab-ActivityOne﹕ onStart
+02-07 18:23:24.443    1835-1835/course.labs.activitylab I/Lab-ActivityOne﹕ onResume
+02-07 18:23:30.479    1835-1835/course.labs.activitylab I/Lab-ActivityOne﹕ onPause
+02-07 18:23:30.775    1835-1835/course.labs.activitylab I/Lab-ActivityTwo﹕ onCreate
+02-07 18:23:30.775    1835-1835/course.labs.activitylab I/Lab-ActivityTwo﹕ onStart
+02-07 18:23:30.779    1835-1835/course.labs.activitylab I/Lab-ActivityTwo﹕ onResume
