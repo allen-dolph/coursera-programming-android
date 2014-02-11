@@ -1,7 +1,11 @@
 apply plugin: 'android'
 android {
     compileSdkVersion 18
+<<<<<<< HEAD
     buildToolsVersion '19.0.1'
+=======
+    buildToolsVersion "19.0"
+>>>>>>> 904ecb97abd7c3d8888d7cb5d41d19d04b70bfd3
 
     defaultConfig {
         minSdkVersion 8
